@@ -11,8 +11,8 @@ using namespace std;
 template <class Type>
 struct nodeType
 {
-	Type info;
-	nodeType<Type> *link;
+  Type info;
+  nodeType<Type> *link;
 };
 
 //***********************************************************
@@ -248,7 +248,7 @@ void linkedListType<Type>::destroyList()
 template <class Type>
 void linkedListType<Type>::initializeList()
 {
-	destroyList(); //if the list has any nodes, delete them
+  destroyList(); //if the list has any nodes, delete them
 }
 
 template <class Type>
@@ -276,7 +276,7 @@ Type linkedListType<Type>::front() const
 {   
     assert(first != NULL);
 
-    return first->info; //return the info of the first node	
+    return first->info; //return the info of the first node 
 }//end front
 
 template <class Type>
@@ -284,7 +284,7 @@ Type linkedListType<Type>::back() const
 {   
     assert(last != NULL);
 
-    return last->info; //return the info of the last node	
+    return last->info; //return the info of the last node 
 }//end back
 
 template <class Type>
@@ -362,7 +362,7 @@ template <class Type>
 linkedListType<Type>::linkedListType
                       (const linkedListType<Type>& otherList)
 {
-   	first = NULL;
+    first = NULL;
     copyList(otherList);
 }//end copy constructor
 

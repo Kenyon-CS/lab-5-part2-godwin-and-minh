@@ -5,51 +5,48 @@
 // linked list.
 //**********************************************************
 
-#include <iostream>
-#include "linkedList.h"                             //Line 1
-#include "orderedLinkedList.h"                  //Line 2
+#include <iostream>                         // Line 1
+#include "linkedList.h"                     // Line 2
+#include "orderedLinkedList.h"              // Line 3
 
-using namespace std;                            //Line 3
+using namespace std;                        // Line 4
 
-int main()                                      //Line 4
+int main()                                  // Line 5
 {
-    orderedLinkedList<int> list1, list2;        //Line 5
-    int num;                                    //Line 6
+    orderedLinkedList<int> list1, list2, newList;   // Line 6
+    int num;                                        // Line 7
 
-    cout << "Line 7: Enter numbers ending "
-         << "with -999." << endl;               //Line 7
-    cin >> num;                                 //Line 8
+    cout << "Line 8: Enter numbers for list1 ending with -999:" << endl;  // Line 8
+    cin >> num;                                                             // Line 9
 
-    while (num != -999)                         //Line 9
-    {                                           //Line 10
-        list1.insert(num);                      //Line 11
-        cin >> num;                             //Line 12
-    }                                           //Line 13
+    while (num != -999)                                                     // Line 10
+    {
+        list1.insert(num);                                                  // Line 11
+        cin >> num;                                                         // Line 12
+    }
 
-    cout << endl;                               //Line 14
+    cout << "Line 13: Enter numbers for list2 ending with -999:" << endl;   // Line 13
+    cin >> num;                                                             // Line 14
 
-    cout << "Line 15: list1: ";                 //Line 15
-    list1.print();                              //Line 16
-    cout << endl;                               //Line 17
+    while (num != -999)                                                     // Line 15
+    {
+        list2.insert(num);                                                  // Line 16
+        cin >> num;                                                         // Line 17
+    }
 
-    list2 = list1; //test the assignment operator Line 18
+    cout << "Line 18: list1: ";                                             // Line 18
+    list1.print();                                                          // Line 19
+    cout << endl;                                                           // Line 20
 
-    cout << "Line 19: list2: ";                 //Line 19
-    list2.print();                              //Line 20
-    cout << endl;                               //Line 21
+    cout << "Line 21: list2: ";                                             // Line 21
+    list2.print();                                                          // Line 22
+    cout << endl;                                                           // Line 23
 
-    cout << "Line 22: Enter the number to be "
-         << "deleted: ";                        //Line 22
-    cin >> num;                                 //Line 23
-    cout << endl;                               //Line 24
+    newList.mergeLists(list1, list2);                                       // Line 24
 
-    list2.deleteNode(num);                      //Line 25
+    cout << "Line 25: Merged list: ";                                       // Line 25
+    newList.print();                                                        // Line 26
+    cout << endl;                                                           // Line 27
 
-    cout << "Line 26: After deleting "
-         << num << ", list2: " << endl;         //Line 26
-    list2.print();                              //Line 27
-    cout << endl;                               //Line 28
-
-    return 0;					                //Line 29
-}                                               //Line 30
-
+    return 0;                                                               // Line 28
+}
