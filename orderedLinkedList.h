@@ -159,12 +159,14 @@ void orderedLinkedList<Type>::deleteNode(const Type& deleteItem)
     }
 }
 
+// Function to merge two ordered linked lists
 template <class Type>
 void orderedLinkedList<Type>::mergeLists(orderedLinkedList<Type> &list1, orderedLinkedList<Type> &list2)
 {
-    nodeType<Type> *current1 = list1.first;
-    nodeType<Type> *current2 = list2.first;
+    nodeType<Type> *current1 = list1.first; // Accessing 'first' from the base class
+    nodeType<Type> *current2 = list2.first; // Accessing 'first' from the base class
 
+    // Inserting the nodes in the two lists in order 
     while (current1 != NULL && current2 != NULL)
     {
         if (current1->info <= current2->info)
@@ -179,18 +181,21 @@ void orderedLinkedList<Type>::mergeLists(orderedLinkedList<Type> &list1, ordered
         }
     }
 
+    // Merging list1 into the main list
     while (current1 != NULL)
     {
         insert(current1->info);
         current1 = current1->link;
     }
 
+    // Merging list2 into the main list
     while (current2 != NULL)
     {
         insert(current2->info);
         current2 = current2->link;
     }
 
+    // Destroy the two lists after use
     list1.destroyList();
     list2.destroyList();
 }
